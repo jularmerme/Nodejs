@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "crm backend",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon ./index.js --exec .babelrc babel-node -e js"
+    "start": "nodemon app.js --exec babel-node -e js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -26,11 +28,12 @@
     "express": "^4.17.3",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.4",
-    "nodemon": "^2.0.15"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "nodemon": "^2.0.15"
   }
 }
