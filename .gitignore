@@ -148,3 +148,11 @@ dist
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/node
+
+
+node-crash-course/client_servers/node_modules/
+adventureTrailsApp/node_modules/
+connectingdb/node_modules/
+expressServer/node_modules/
+middleware/node_modules/
+myApp/node_modules/
