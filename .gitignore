@@ -149,10 +149,13 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/node
 
-
-node-crash-course/client_servers/node_modules/
-adventureTrailsApp/node_modules/
-connectingdb/node_modules/
-expressServer/node_modules/
-middleware/node_modules/
-myApp/node_modules/
+0.1.learning/node_modules/
+0.2.node-crash-course/client_servers/node_modules/
+0.4.adventureTrailsApp/node_modules/
+0.6.connectingdb/node_modules/
+0.7.expressServer/node_modules/
+0.8.middleware/node_modules/
+0.3.myApp/node_modules/
+0.9.restfulAPI/node_modules/
+0.5.axiosApiApp/node_modules/
+axiosApiApp/node_modules/
