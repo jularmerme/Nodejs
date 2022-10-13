@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function onClickButton(value) {
+        if (value === "Login as Admin") {
+          document.loginform.action = "http://localhost:3000/admin";
+          document.loginform.submit();
+        } else if (value === "Login as User") {
+          document.loginform.action = "http://localhost:3000/user";
+          document.loginform.submit();
+        } else if (value === "Login as Guest") {
+          document.loginform.action = "http://localhost:3000/guest";
+          document.loginform.submit();
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form method="post" name="loginform">
+      <input
+        type="button"
+        value="Login as Admin"
+        onclick="onClickButton(this.value)"
+      />
+      <input
+        type="button"
+        value="Login as User"
+        onclick="onClickButton(this.value)"
+      />
+      <input
+        type="button"
+        value="Login as Guest"
+        onclick="onClickButton(this.value)"
+      />
+    </form>
+  </body>
+</html>

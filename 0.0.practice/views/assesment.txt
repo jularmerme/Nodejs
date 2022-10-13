@@ -1,0 +1,375 @@
+
+Q1 of 25
+In a Node.js application, there is a requirement to handle a huge number
+of incoming request efficiently. Which among the below Node.js features
+suitale for this requirement?(select any two)
+
+Asynchronous X
+Streaming of data
+Single Threaded X
+Modular JavaScript
+
+Q2 of 25
+Consider the following set of middlewares configured in an Express app.
+
+app.use(function(req, res, next) { 
+  console.log('processing request');
+  next(); 
+});
+
+app.use(function(req, res, next) {
+  console.log('terminating request');
+  res.send('I am second);
+});
+
+app.use(function(req, res, next) {
+  console.log('I am third')
+})
+
+Which of the following options is incorrect for the above middlewares configuration?
+
+The first middleware logs a console message before passing control to the next middleware
+The second middleware will never execute X
+The last middleware will never execute
+The second middleware will get executed and logs a console message
+
+Q3 of Q25
+Select the incorrect statement about Express Framework
+Express is a very minimal Framework and it is possible to add any additional functionalities wherever needed
+Express provides the functionality to reuse code within the web app
+Express is a powerful Framework as it gives full access to the core Node APIs
+Express is an opinionated framework X
+
+Q4 of Q25
+Consider the following Express code snippet:
+
+app.get('/', function(req, res) {
+  res.send("I am Foo);
+})
+
+app.get('/:id', function(req, res) {
+  res.send("I am Foo with id " + req.params.id);
+})
+
+If the application is accessed using the route "http://localhost:3000/22", what will be the output?
+I am Foo
+I am Foo with id 22 X
+I am Foo with id undefined
+Throws error
+
+Q5 of Q25
+Select the incorrect statement about the helmet middleware in the Express Framework
+Can be easily configured in an Express application
+Collection of other middleware functionalities
+Provides protection by setting security related headers
+Modifying the default configuration is not allowed X
+
+Q6 of Q25
+Which of the following functionalities are supported in the Express Framework?
+(i) Write request handlers for different URL pathc and with different HTTP verbs
+(ii) Add any middleware function for processing the request within the request handling functionalities
+(iii) Generate response using a view rendering engine
+
+only (i) is correct
+only (i) and (ii) are correct
+only (ii) and (iii) are correct
+(i), (ii) and (iii) are correct X
+
+Q7 of Q25
+Consider the below given code snippet:
+
+var Employee = {
+  empname: "Joe",
+  empid: 1234,
+  getEmpId: function() {
+    console.log(this.empid);
+  }
+};
+
+Select the appropiate options to export the empname from the above code snippet(select two)
+exports = Employee;
+exports.emp = Employee;
+module.exports = new Employee();
+exports.empname = Employee.empname;
+
+Q8 of Q25
+Consider the code below
+
+const http = require('http');
+
+const server = http.createServer((request, response) => {
+  console.log('request starting...');
+  response.write('hello client!');
+  response.end();
+});
+
+Assume the server is started and the client is making a request to the URL "http://127.0.0.1:3000/". What may be the response
+from the server to the client?
+
+Server will send "end" message to client
+Server will send "hello client" message to client
+Server will send "request starting" message to client
+The site can't be reached X
+
+Q9 of Q25
+const express = require('express')
+
+const app = express();
+app.all(
+  '/test', (req, res, next) => {
+    console.log('The test was...);
+    next();
+  },
+  (req, res, next) => {
+    res.send('Good');
+    res.end();
+  }
+);
+
+app.listen(3000);
+
+What will be the console message if any request comes on the '/test' route?
+Good The test was...
+Good
+The test was... Good
+The test was... X
+
+Q10 of Q25
+Which among the below is/are true regarding single-threaded event loop mechanism in JavaScript?
+(i) A single thread will be used to handle each and every request
+(ii) An Asynchronous thread will be allocated to handle each and every request
+(iii) An Asynchronous thread will be allocated to handle each and every request that has a blocking I/O operation
+
+only (i) is true
+only (ii) is true
+only (iii) is true
+Both (i) and (iii) are true
+
+Q11 of Q25
+A web developer is designing a simple website which consists of 3 pages, i.e. home page, about page, contact us page. He has A
+requirement to send an HTML file as a response based on the request path. How to achieve this using Express routing functionality?
+
+Use sendFile() method of response object
+Use write() method of response object
+Use post() method of response object
+It is not possible to send HTML file as part of response object
+
+Q12 of Q25
+Consider the below code written in the employee.js file:
+
+exports.Emp = {
+  empname: "Joe",
+  empid: "1234,
+  getEmpId: function() {
+    console.log(this.empid);
+  }
+};
+
+Which of the below option could be used for using the abouve EMp object in another module/file?
+var emp == require("./Emp");
+var emp = require("./employee"); X
+var emp = require("./employee.js");
+var emp = require("./index.js)
+
+Q13 of Q25
+Node.js provides a "body-parser" middleware that parses the request bodies before executing the handler function. Identify
+the incorrect statement about the different types of parsers provided in this middleware
+
+bodyParser.json() returns middleware that parses json body
+bodyParser.raw() returns middleware that parses all bodies
+bodyParser.text() returns middleware that parses bodies as a string
+bodyParser.html() returns middleware that parses bodies as html
+
+Q14 of Q25
+What will be the output of the below code on the browser, when you hit on the URL "http://localhost:3000/home/Steve/Rogers",
+with the GET method?
+
+const express = require('express');
+
+const app = express();
+
+const errLog = (err, req, res, next) => {
+  console.log(err.stack);
+  res.send('Something broke!');
+};
+
+app.get('/home/:firstName/:lastName', (req, res) => {
+  res.send(req.query);
+  res.send(req.params);
+});
+
+app.use(errLog);
+
+console.log('Server Started at port 3000!');
+app.listen(3000);
+
+Something broke!
+{"firstName": "Steve", "lastName": "Rogers"}
+Cannot GET/home/Steve/Rogers
+{} X
+
+Q15 of Q25
+Consider the scenario where a "MovieBase" App is to be developed using Express. Which of the following command is to be
+executed for generating the app using the express generator tool, assuming the Express module is already installed?
+
+npm install -g express-generator express MovieBase X
+MovieBase express
+npm install -g generator
+npm install -g generator-module npm install -g express-MovieBase
+
+Q16 of Q25
+Consider the route handlers shown below:
+
+app.get('/abcd', function (req, res) {
+  res.send('abcd');
+});
+
+app.get('/abc*', function (req, res) {
+  res.send('abc*');
+});
+
+If the application is accessed with the URL "hptt://localhost:3000/abcd", what will be the response sent from the server to
+the client
+abcd X
+abc*
+abcdabc*
+error message
+
+Q17 of Q25
+Select the incorrect statement about the Express middleware
+Middleware can be invoked by using the next() function
+It is allowed to have multiple middleware fo the same path
+Middleware is always invoked in the order added
+Middleware cannot access the request and response object
+
+Q18 of Q25
+What is the output in the console of the following code when you run the command 'node app'?
+app.js
+const firstjs = require('./js1');
+const secondjs = require('./js2');
+
+console.log(`${firstjs.course}, ${secondjs.course}`);
+
+js1.js
+exports.course = 'Node';
+
+js2.js
+const name = 'Express';
+
+module not found
+Node, Express
+Node, undefined X
+course is not defined
+
+Q19 of Q25
+A schema defines document properties through an object whre the key name corresponds to the property name in the Collection
+
+true X
+False
+
+Q20 of Q25
+Consider an Express application generated using the Express generator tool. Which of the following option(s) is/are true
+regarding the auto-generated folder structure?
+(i) The package.json file has dependencies related information for the application
+(ii) The routes in the application are stored under the folder routes.
+(iii) The app.js file has the application object definition and also has different middleware settings
+
+only (i)
+only(ii)
+only(iii)
+(i), (ii) and (iii) X
+
+Q21 of Q25
+An application developer is working on a specification, wherein he has to decide upon selecting the server between Node-based
+web server and the traditional web server. Which among the below difference is true and to be considered for his requirement?
+
+Traditional web server uses multi threaded model and processes incoming request much faster than Node based server
+Node based web server uses a single threaded model and can service larger number of requests quickly than traditional web server X
+There is no much difference between the two
+Integrate traditional webserver with Node webserver
+
+Q22 of Q25
+Consider the code snippet in the "server.js" file:
+
+app.get('/send-ok', function(req, res) {
+  res.status(200).send({message: 'Data was submitted succesfully.'})
+})
+
+if the application is accessed with the URL "http://localhost/send-ok", what will be the response displayed on the browser?
+
+Data was submitted successfully!
+{message: 'Data was submitted succesfully.} X
+200 ok
+Cannot GET
+
+Q23 of Q25
+Consider the below code snippet in the 'server.js'
+
+const call1 = function(request, response, next) {
+  console.log('Calling 1');
+  next();
+};
+
+const call2 = function(request, response, next) {
+  console.log('Calling 2');
+  response.end();
+};
+
+const call3 = function(request, response, next) {
+  console.log('Calling 3');
+  next();
+};
+
+const call4 = function(request, response, next) {
+  console.log('Calling 4');
+  response.end();
+};
+
+app.all('/login', [call2, call4, call1, call3]);
+
+Imagine the server is started and if the user visits the URL "http://localhost:3000/login?", what will be the message
+displayed in the console?
+
+Calling 1 Calling 2 Calling 3 Calling 4
+Calling 2 Calling 1 Calling 3 Calling 4
+Calling 2 Calling 3
+Calling 2 Calling 4 X
+
+Q24 of Q25
+Consider the following Express code snippet with the middleware configuration
+
+app.get('/', function(req, res) { res.send('hello'); })
+
+app.use(function(req, res, next) {
+  res.send("I am middleware");
+  next();
+});
+
+app.post('/', function(req, res) { res.send('bye') })
+
+What will be the response sent from the server to the client if the application is accessed using HTTP GET on the base
+address "/"?
+
+hello X
+hello I am middleware
+hello I am middleware bye
+I am middleware
+
+Q25 of Q25
+Consider the following Express code snippet
+
+const express = require('express');
+const app = express();
+app.get('/', function(req, res, next) {
+  res.send('hello world');
+});
+app.listen(3000);
+
+Imagine the server is started and if the user visit the URL "http://localhost:3000/hello", what will be the response sent
+from the server to the client?
+
+Cannot GET /hello X
+hello world
+hello
+world
+
